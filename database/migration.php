@@ -1,6 +1,6 @@
 <?php
 try {
-    include './connection.php';
+    include 'connection.php';
 
 
     $tables = [
