@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="/assets/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/assets/css/AdminLTE.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/assets/css/skins/_all-skins.min.css">
@@ -41,73 +41,78 @@
 </head>
 
 <?php
-$file = @$_GET['url'];
-if (empty($file)) {
+$url =  $_SERVER['REQUEST_URI'];
+if ($url == '/') {
   echo "<body class='hold-transition login-page'>";
   include '../login.php';
 } else {
   echo "<body class='hold-transition skin-blue sidebar-mini'>";
 ?>
-<div class="wrapper">
+  <div class="wrapper">
 
-<header class="main-header">
+    <header class="main-header">
 
-  <!-- Logo -->
-  <a href="index2.html" class="logo">
-    <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>KSR</b></span>
-    <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Kasir</b></span>
-  </a>
+      <!-- Logo -->
+      <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>KSR</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Kasir</b></span>
+      </a>
 
- <?php
-  include 'navbar.php';
- ?>
-</header>
+      <?php
+      include 'navbar.php';
+      ?>
+    </header>
 
-<?php
-  include 'sidebar.php';
- ?>
+    <?php
+    include 'sidebar.php';
+    ?>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Dashboard
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Dashboard</li>
-    </ol>
-  </section>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Dashboard
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">Dashboard</li>
+        </ol>
+      </section>
 
 
-  <!-- Main content -->
-  <section class="content">
-    <!-- Info boxes -->
-    <div class="row">
-    <?php include '../menu/' . $file . '.php'; ?>
+      <!-- Main content -->
+      <section class="content">
+        <!-- Info boxes -->
+        <div class="row">
+          <!-- <php include '../menu/' . $file . '.php'; ?> -->
+
+            <?php
+              include '../menu/' . $url . '.php';
+            
+            ?>
+        </div>
+        <!-- /.row -->
+
+
+        <!-- /.row -->
+      </section>
+      <!-- /.content -->
     </div>
-    <!-- /.row -->
+    <!-- /.content-wrapper -->
 
-  
-    <!-- /.row -->
-  </section>
-  <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 2.4.13
+      </div>
+      <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+      reserved.
+    </footer>
 
-<footer class="main-footer">
-  <div class="pull-right hidden-xs">
-    <b>Version</b> 2.4.13
   </div>
-  <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-  reserved.
-</footer>
-
-</div>
-<!-- ./wrapper -->
+  <!-- ./wrapper -->
 
 
 
@@ -141,11 +146,11 @@ if (empty($file)) {
 <script src="/assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script>
-    $(function() {
-        $('#example1').DataTable({
-            'ordering': false,
-        })
+  $(function() {
+    $('#example1').DataTable({
+      'ordering': false,
     })
+  })
 </script>
 </body>
 

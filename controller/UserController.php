@@ -20,7 +20,7 @@ class UserController
             $_SESSION['id_level'] = $data['id_level'];
             $_SESSION = 'login_berhasil';
             if ($data['id_level'] == 1) { 
-                header('Location: ?url=home');
+                header('Location: home');
                 exit;
             } else {
                 // Jika tidak, tampilkan pesan dan arahkan ke halaman utama

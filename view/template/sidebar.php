@@ -15,13 +15,13 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="<?php $_GET['url'] = "home" ? "active" : "" ?>">
-                <a href="?url=home">
+            <li class="<?php echo $_SERVER['REQUEST_URI'] == 'home' ? 'active' : ''; ?>">
+                <a href="home">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
-            <li class="treeview <?php $_GET == '?url=pelanggan' || $_GET == '?url=produk' || $_GET == '?url=petugas' ? 'active' : '' ?>">
+            <li class="treeview <?php echo $_SERVER['REQUEST_URI'] == 'pelanggan' || $_SERVER['REQUEST_URI'] == 'produk' || $_SERVER['REQUEST_URI'] == 'petugas' ? 'active' : '' ?>">
                 <a href="#">
                     <i class="fa fa-pie-chart"></i>
                     <span>Master Data</span>
@@ -30,9 +30,9 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="?url=pelanggan"><i class="fa fa-circle-o"></i> Data Pelanggan</a></li>
-                    <li><a href="?url=produk"><i class="fa fa-circle-o"></i> Data Produk</a></li>
-                    <li><a href="?url=petugas"><i class="fa fa-circle-o"></i> Data User</a></li>
+                    <li><a href="pelanggan"><i class="fa fa-circle-o"></i> Data Pelanggan</a></li>
+                    <li><a href="produk"><i class="fa fa-circle-o"></i> Data Produk</a></li>
+                    <li><a href="petugas"><i class="fa fa-circle-o"></i> Data User</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -49,7 +49,7 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="?url=home">
+                <a href="home">
                     <i class="fa fa-sticky-note-o"></i> <span>Laporan</span>
                     <span class="pull-right-container">
                     </span>
